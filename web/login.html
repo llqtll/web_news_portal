@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <form method="POST" action="/login">
+
+            <div class="home-button">
+                <a href="/index.html" title="На главную">
+                    <img src="uploads/home.png" width="30" height="30" alt="Home">
+                </a>
+            </div>
+
+            <h1>Вход</h1>
+            <div class="input-box">
+                <img src="uploads/user.png" width="20" height="30" class="icon-left"/> 
+                <input type="text" name="username" placeholder="Логин" autocomplete="username" required/>
+            </div>
+
+            <div class="input-box">
+                <img src="uploads/lock.png" width="20" height="20" class="icon-left"/>   
+                <input type="password" name="password" placeholder="Пароль" autocomplete="current-password" required/>
+            </div>
+
+            <div class="auth-actions">
+                <button type="submit" class="btn-register">Войти</button>
+                <div class="auth-divider">
+                    <span>или</span>
+                </div>
+                <a href="register.html" class="btn-login">Зарегистрироваться</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

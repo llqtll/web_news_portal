@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Категория - {{category_name}}</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/index.html">
+                    <img src="uploads/logo.png" alt="Логотип">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Главная</a></li>
+                    <li><a href="/article.html" class="nav-link">Создать статью</a></li>
+                    <li><a href="#" class="nav-link">О нас</a></li>
+                    <!-- AUTH_BUTTONS -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <!-- Заголовок категории -->
+        <div class="category-header">
+            <h1>{{category_name}}</h1>
+            <p class="category-description">{{category_description}}</p>
+        </div>
+
+        <!-- Сетка статей в том же стиле что и категории -->
+        <div class="articles-grid">
+            <!-- ARTICLES_LIST -->
+        </div>
+    </main>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>

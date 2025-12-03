@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель</title>
+    <link rel="stylesheet" href="../css/style_admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Боковая панель -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Админ панель</h2>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link">
+                            <img src="../uploads/dashboard.png" alt="Дашборд" class="nav-icon">
+                            <span>Дашборд</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#categories" class="nav-link">
+                            <img src="../uploads/categories.png" alt="Категории" class="nav-icon">
+                            <span>Категории</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#users" class="nav-link">
+                            <img src="../uploads/users.png" alt="Пользователи" class="nav-icon">
+                            <span>Пользователи</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#articles" class="nav-link">
+                            <img src="../uploads/articles.png" alt="Статьи" class="nav-icon">
+                            <span>Статьи</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout-section">
+                <a href="../index.html" class="logo-link" title="Перейти на главную страницу">
+                    <img src="../uploads/logo.png" alt="Логотип сайта" class="logo-image">
+                </a>
+            </div>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <!-- Шапка -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <h1>Панель управления</h1>
+                </div>
+                <div class="header-right">
+                    <div class="admin-user">
+                        <span>Администратор</span>
+                        <img src="../uploads/admin-avatar.png" alt="Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Контентные секции -->
+            <section id="dashboard" class="content-section active">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon users-stat">
+                            <img src="../uploads/users.png" alt="Пользователи">
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Пользователей</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon articles-stat">
+                            <img src="../uploads/articles.png" alt="Статьи">
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Статей</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon categories-stat">
+                            <img src="../uploads/categories.png" alt="Категории">
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Категорий</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="categories" class="content-section">
+                <div class="section-header">
+                    <h2>Управление категориями</h2>
+                    <button class="btn-primary" onclick="openCategoryModal()">Добавить категорию</button>
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Название</th>
+                                <th>Описание</th>
+                                <th>Статей</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- CATEGORIES_TABLE -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="users" class="content-section">
+                <div class="section-header">
+                    <h2>Управление пользователями</h2>
+                    <button class="btn-primary" onclick="openAddUserModal()">Добавить пользователя</button>
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Имя пользователя</th>
+                                <th>Email</th>
+                                <th>Роль</th>
+                                <th>Активность</th>
+                                <th>Дата регистрации</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <!-- USERS_TABLE -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="articles" class="content-section">
+                <div class="section-header">
+                    <h2>Управление статьями</h2>
+                    <!-- <button class="btn-primary" onclick="openArticleModal()">Добавить статью</button> -->
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Заголовок</th>
+                                <th>Slug</th>
+                                <th>Контент</th>
+                                <th>Аннотация</th>
+                                <th>Автор</th>
+                                <th>Категория</th>
+                                <th>Статус</th>
+                                <th>Изображение</th>
+                                <th>Просмотры</th>
+                                <th>Создана</th>
+                                <th>Обновлена</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ARTICLES_TABLE -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+
+
+    <!-- Модальное окно категории -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCategoryModal()">&times;</span>
+            <h2 id="categoryModalTitle">Добавить категорию</h2>
+            <form id="categoryForm">
+                <input type="hidden" id="categoryId" name="id">
+                <div class="form-group">
+                    <label for="categoryName">Название категории:</label>
+                    <input type="text" id="categoryName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="categorySlug">Slug (URL):</label>
+                    <input type="text" id="categorySlug" name="slug" required>
+                    <small>URL-friendly название (латинские буквы, цифры, дефисы)</small>
+                </div>
+                <div class="form-group">
+                    <label for="categoryDescription">Описание:</label>
+                    <textarea id="categoryDescription" name="description" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+
+
+   
+
+    <!-- Модальное окно для добавления пользователя -->
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddUserModal()">&times;</span>
+            <h2>Добавить пользователя</h2>
+            <form id="addUserForm">
+                <div class="form-group">
+                    <label for="newUserName">Имя пользователя:</label>
+                    <input type="text" id="newUserName" name="username" required>
+                    <div class="error-message" id="usernameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="newUserEmail">Email:</label>
+                    <input type="email" id="newUserEmail" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="newUserPassword">Пароль:</label>
+                    <input type="password" id="newUserPassword" name="password" required>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="newUserRole">Роль:</label>
+                    <select id="newUserRole" name="role" required>
+                        <option value="user">Пользователь</option>
+                        <option value="admin">Администратор</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Создать пользователя</button>
+            </form>
+        </div>
+    </div>
+
+
+
+<script src="../js/admin.js"></script>
+</body>
+</html>

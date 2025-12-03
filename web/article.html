@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать статью</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="uploads/logo.png" alt="Логотип компании">
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Главная</a></li>
+                    <li><a href="/article.html" class="nav-link active">Создать статью</a></li>
+                    <li><a href="#" class="nav-link">О нас</a></li>
+                    <!-- AUTH_BUTTONS -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="create-article-section">
+            <h1>Создать новую статью</h1>
+            <form id="createArticleForm" class="article-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="articleTitle">Заголовок статьи:</label>
+                    <input type="text" id="articleTitle" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="articleSlug">Slug (URL):</label>
+                    <input type="text" id="articleSlug" name="slug" required>
+                    <small>URL-friendly название (латинские буквы, цифры, дефисы)</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="articleCategory">Категория:</label>
+                    <select id="articleCategory" name="category_id" required>
+                        <option value="">Выберите категорию</option>
+                        <!-- CATEGORIES_OPTIONS -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="articleExcerpt">Краткое описание:</label>
+                    <textarea id="articleExcerpt" name="excerpt" rows="3" maxlength="255"></textarea>
+                    <small>Максимум 255 символов</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="articleContent">Содержание статьи:</label>
+                    <textarea id="articleContent" name="content" rows="12" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="articleStatus">Статус:</label>
+                    <select id="articleStatus" name="status">
+                        <option value="draft">Черновик</option>
+                        <option value="published">Опубликовано</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="articleImage">Изображение статьи:</label>
+                    <input type="file" id="articleImage" name="featured_image" accept="image/*">
+                    <small>Перетащите изображение с рабочего стола или выберите файл</small>
+                    <div id="imagePreview" class="image-preview" style="display: none;">
+                        <img id="previewImage" src="" alt="Предпросмотр">
+                        <button type="button" id="removeImage" class="btn-remove">×</button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary">Создать статью</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

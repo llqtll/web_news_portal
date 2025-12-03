@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body> 
+    <div class="wrapper">
+        <form method="POST" action="/register" id="registerForm">
+
+            <div class="home-button">
+                <a href="/index.html" title="На главную">
+                    <img src="uploads/home.png" width="30" height="30" alt="Home">
+                </a>
+            </div>
+            
+            <h1>Регистрация</h1>
+            
+            <div class="input-container">
+                <div class="input-box">
+                    <img src="uploads/user.png" width="20" height="30" class="icon-left"/>
+                    <input type="text" id="username" name="username" placeholder="Логин" autocomplete="username" required/>
+                </div>
+                <div class="error-message" id="usernameError"></div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-box">
+                    <img src="uploads/lock.png" width="20" height="20" class="icon-left"/>   
+                    <input type="password" id="password" name="password" placeholder="Пароль" autocomplete="new-password" required/>
+                </div>
+                <div class="error-message" id="passwordError"></div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-box">
+                    <img src="uploads/lock.png" width="20" height="20" class="icon-left"/>   
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Повторите пароль" autocomplete="new-password" required/>
+                </div>
+                <div class="error-message" id="confirm-passwordError"></div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-box">
+                    <img src="uploads/email.png" width="20" height="20" class="icon-left"/>
+                    <input type="email" id="email" name="email" placeholder="Почта" autocomplete="email" required/>
+                </div>
+                <div class="error-message" id="emailError"></div>
+            </div>
+
+            <div class="auth-actions">
+                <button type="submit" class="btn-register">Зарегистрироваться</button>
+                <div class="auth-divider">
+                    <span>или</span>
+                </div>
+                <a href="login.html" class="btn-login">Войти в аккаунт</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
